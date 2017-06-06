@@ -89,6 +89,28 @@
 				<context id = "childrenquestion"/>
 		</context>
 		<context id = "animalquestion">
+			<output value = "$fourthpitch Есть ли у вас домашние животные?"/>
+			<input value = "$Yes">
+			<var name = "estatestatus" value = "1"/>
+			<var name = "fifthpitch" value = "Отлично."/>
+				<context id = "finalpitch"/>
+			</input>
+			<input value = "$No">
+			<var name = "estatestatus" value = "0"/>
+			<var name = "fifthpitch" value = "Отлично."/>
+				<context id = "finalpitch"/>
+			</input>
+			<input value = "$Text">
+			<var name = "fourthpitch" value = "Извините, не поняла."/>
+				<context id = "animalquestion"/>
+		</context>
+		<context id = "finalpitch">
+			<output value = "Благодарю Вас/спасибо за ответы.
+
+Программa «Семья» - это защита от таких распространённых рисков как ожоги, переломы, травмы различной тяжести на общую сумму 800 000 рублей
+Я направляю вам СМС сообщение. Пройдя по ссылке внутри него вы узнаете все необходимые подробности и сможете преобрести данную программу.
+
+Спасибо, что остаетесь нашим клиентом. С любовью к вам, Сбербанк."/>
 		</context>
 	</input>
 </context>
