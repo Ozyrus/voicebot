@@ -1,5 +1,5 @@
 <context>
-	<input id = "startmessage" pattern = "start Surname: $Surname::Text Name: $Name::Text Second_name: $Second_name::Text">
+	<input id = "startmessage" pattern = "start $Surname::Text $Name::Text $Second_name::Text">
 		<pattern name="Yes" value="(да|ага|угу) *"/>
 		<pattern name = "No" value = "(не*|но*) *"/>
 		<var name = "Name" value = "$Name" scope = "user"/>
