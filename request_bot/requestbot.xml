@@ -9,6 +9,7 @@
 				<var name="Name" value="javascript: $Args[2]"/>
 				<var name="Second_name" value="javascript: $Args[3]"/>
 				<output value="Телефон: $Phone, Имя: $Name, Отчество: $Second_name, Фамилия: $Surname"/>
+				<context id="ready_to_call"/>	
 			</input>
 		</context>
 	</input>
