@@ -1,14 +1,14 @@
 <context>
-	<input id = "startmessage" pattern = "start $Name::Text $Surname::Text $Second_name::Text">
+	<input id = "startmessage" pattern = "start $Name::Text $Second_name::Text $Surname::Text">
 		<var name = "Name" value = "$Name"/>
 		<var name = "Surname" value = "$Surname"/>
 		<var name = "second_name" value = "$second_name"/>
 		<var name = "specialistname" value = "Юля"/>
 		<var name = "starttype" value= "Добрый день! Меня зовут $specialistname, я специалист сбербанка." scope="context"/>
 		<context id = "mainscenario">
-		<output value = "$starttype Вас зовут $Name $Surname $Second_name? Я попала по правильному номеру?"/>
+		<output value = "$starttype Вас зовут $Name $Second_name $Surname? Я попала по правильному номеру?"/>
 			<input id = "greeting_next" pattern ="(да|ага)*">
-				<var name = "comfytype" pattern = "Спасибо! Очень приятно познакомиться." scope= "context"/>
+				<var name = "comfytype" pattern = "Спасибо! Очень приятно познакомиться." scope= "user"/>
 				<context id = "comfy_or_not">
 					<output value = "$comfytype Вам удобно сейчас уделить мне пару минут?"/>
 					<input id = "not comfy" pattern = "(не*|неудобно) *">
