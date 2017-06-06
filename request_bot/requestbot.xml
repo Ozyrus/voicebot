@@ -2,7 +2,8 @@
 	<input pattern="/start">
 		<context id="ready_to_call">	
 			<output value="Кому звоним?"/>
-			<input pattern="$Phone::Text $Surname::Text $Name::Text $Second_name::Text">
+			<pattern name="Phone" value="repeat((0|1|2|3|4|5|6|7|8|9))"/>
+			<input pattern="$Phone $Surname::Text $Name::Text $Second_name::Text">
 				<output value="Телефон: $Phone, Имя: $Name, Отчество: $Second_name, Фамилия: $Surname"/>
 			</input>
 		</context>
