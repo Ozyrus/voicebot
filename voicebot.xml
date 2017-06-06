@@ -6,38 +6,38 @@
 		<var name = "specialistname" value = "Юля"/>
 		<var name = "starttype" value= "Добрый день! Меня зовут $specialistname, я специалист сбербанка." scope="context"/>
 		<context id = "mainscenario">
-			<output value = "$starttype Вас зовут $Uername? Я попала по правильному номеру?"/>
-				<input id = "greeting_next" pattern ="(да|ага)*">
-					<var name = "comfytype" pattern = "Спасибо! Очень приятно познакомиться."/>
-					<context id = "comfy_or_not">
-						<output value = "$comfytype Вам удобно сейчас уделить мне пару минут?"/>
-								<input id = "not comfy" pattern = "(не*|неудобно) *">
-									<output value = "Извините. В какое удобное для вас время я могу перезвонить?"/>
-										<input value = "$Text">
-											<var name = "callbacktime" pattern = "$Text"/>
-											<output value = "Спасибо! До свидания."/>
-										</input>
-								</input>
-								<input id = "comfy" pattern = "(да|давайте|конечно|ладно|продолжай*)*">
-								<var name = "firstpitch" value = "Отлично! Сбербанк, совместно с Компанией «Сбербанк страхование жизни», разработал для Вас программу «Защита семьи».
-	Она дает возможность финансовой защиты в ситуациях, связанных с жизнью и здоровьем Вас и Вашей семьи.[Имя Отчество клиента], для того, чтобы подобрать наиболее подходящую программу и озвучить условия, разрешите задать вам несколько вопросов."/>
-									<context id = "marriagequestion">
-										<output value ="$firstpitch Вы состоите в официальном браке?"/>
-									</context>
-								</input>
-								<input id = "comfy_no_comrpende" pattern = "$Text">
-									<var name = "comfytype" value = "Не расслышала вас."/>
-									<context id = "comfy_or_not"/>
-								</input>
-					</context>
-				</input>
-				<input id = "greeting_return" pattern = "(не*|до свидания|неверн*) *">
-					<output value = "Извините! Видимо, произошла какая-то ошибка."/>
-				</input>
-				<input id = "greeting_no_comrpende" pattern = "$Text">
-					<var name = "starttype" value = "Не расслышала вас."/>
-					<context id = "mainscenario"/>
-				</input>
+		<output value = "$starttype Вас зовут $Uername? Я попала по правильному номеру?"/>
+			<input id = "greeting_next" pattern ="(да|ага)*">
+				<var name = "comfytype" pattern = "Спасибо! Очень приятно познакомиться."/>
+				<context id = "comfy_or_not">
+					<output value = "$comfytype Вам удобно сейчас уделить мне пару минут?"/>
+					<input id = "not comfy" pattern = "(не*|неудобно) *">
+						<output value = "Извините. В какое удобное для вас время я могу перезвонить?"/>
+							<input value = "$Text">
+								<var name = "callbacktime" pattern = "$Text"/>
+								<output value = "Спасибо! До свидания."/>
+							</input>
+					</input>
+					<input id = "comfy" pattern = "(да|давайте|конечно|ладно|продолжай*)*">
+					<var name = "firstpitch" value = "Отлично! Сбербанк, совместно с Компанией «Сбербанк страхование жизни», разработал для Вас программу «Защита семьи».
+Она дает возможность финансовой защиты в ситуациях, связанных с жизнью и здоровьем Вас и Вашей семьи.[Имя Отчество клиента], для того, чтобы подобрать наиболее подходящую программу и озвучить условия, разрешите задать вам несколько вопросов."/>
+						<context id = "marriagequestion">
+							<output value ="$firstpitch Вы состоите в официальном браке?"/>
+						</context>
+					</input>
+					<input id = "comfy_no_comrpende" pattern = "$Text">
+						<var name = "comfytype" value = "Не расслышала вас."/>
+						<context id = "comfy_or_not"/>
+					</input>
+				</context>
+			</input>
+			<input id = "greeting_return" pattern = "(не*|до свидания|неверн*) *">
+				<output value = "Извините! Видимо, произошла какая-то ошибка."/>
+			</input>
+			<input id = "greeting_no_comrpende" pattern = "$Text">
+				<var name = "starttype" value = "Не расслышала вас."/>
+				<context id = "mainscenario"/>
+			</input>
 		</context>
 	</input>
 </context>
