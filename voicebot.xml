@@ -13,10 +13,12 @@
 					<output value = "$comfytype Вам удобно сейчас уделить мне пару минут?"/>
 					<input id = "not comfy" pattern = "(не*|неудобно) *">
 						<output value = "Извините. В какое удобное для вас время я могу перезвонить?"/>
+							<context>
 							<input value = "$Text">
 								<var name = "callbacktime" pattern = "$Text"/>
 								<output value = "Спасибо! До свидания."/>
 							</input>
+							</context>
 					</input>
 					<input id = "comfy" pattern = "(да|давайте|конечно|ладно|продолжай*)*">
 					<var name = "firstpitch" value = "Отлично! Сбербанк, совместно с Компанией «Сбербанк страхование жизни», разработал для Вас программу «Защита семьи».
