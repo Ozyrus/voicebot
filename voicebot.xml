@@ -34,10 +34,12 @@
 								<var name = "marriagestatus" value = "0"/>
 									<context id = "childrenquestion"/>
 								</input>
-								<input value = "$Text" modal = "True">
-								<var name = "firstpitch" value = "Извините, не расслышала."/>
-									<context id = "marriagequestion"/>
-								</input>
+								<context modal = "true">
+									<input value = "$Text">
+									<var name = "firstpitch" value = "Извините, не расслышала."/>
+										<context id = "marriagequestion"/>
+									</input>
+								</context>
 						</context>
 					</input>
 					<input id = "comfy_no_comrpende" pattern = "$Text">
