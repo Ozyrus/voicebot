@@ -1,7 +1,5 @@
 <context>
 	<input id = "startmessage" pattern = "start $Surname::Text $Name::Text $Second_name::Text">
-		<pattern name="Yes" value="(да|ага|угу) *"/>
-		<pattern name = "No" value = "(не*|но*) *"/>
 		<var name = "Name" value = "$Name" scope = "user"/>
 		<var name = "Surname" value = "$Surname" scope = "user"/>
 		<var name = "second_name" value = "$second_name" scope ="user"/>
@@ -27,12 +25,12 @@
 Она дает возможность финансовой защиты в ситуациях, связанных с жизнью и здоровьем Вас и Вашей семьи.$Name $Second_name, для того, чтобы подобрать наиболее подходящую программу и озвучить условия, разрешите задать вам несколько вопросов."/>
 						<context id = "marriagequestion">
 							<output value ="$firstpitch Вы состоите в официальном браке?"/>
-								<input value = "$Yes">
+								<input value = "(да|ага|угу) *">
 								<var name = "marriagestatus" value = "1"/>
 								<var name = "secondpitch" value = "Хорошо."/>
 									<context id = "childrenquestion"/>
 								</input>
-								<input value = "$No">
+								<input value = "(не*|но*) *">
 								<var name = "marriagestatus" value = "0"/>
 									<context id = "childrenquestion"/>
 								</input>
@@ -58,12 +56,12 @@
 		</context>
 		<context id = "childrenquestion">
 			<output value = "$secondpitch Есть ли у вас дети старше 2 лет?"/>
-			<input value = "$Yes">
+			<input value = "(да|ага|угу) *">
 			<var name = "childrenstatus" value = "1"/>
 			<var name = "thirdpitch" value = "Спасибо."/>
 				<context id = "estatequestion"/>
 			</input>
-			<input value = "$No">
+			<input value = "(не*|но*) *">
 			<var name = "childrenstatus" value = "0"/>
 			<var name = "thirdpitch" value = "Спасибо."/>
 				<context id = "estatequestion"/>
@@ -75,12 +73,12 @@
 		</context>
 		<context id = "estatequestion">
 			<output value = "$thirdpitch Есть ли у вас собственная недвижимость"/>
-			<input value = "$Yes">
+			<input value = "(да|ага|угу) *">
 			<var name = "estatestatus" value = "1"/>
 			<var name = "fourthpitch" value = "Поняла."/>
 				<context id = "animalquestion"/>
 			</input>
-			<input value = "$No">
+			<input value = "(не*|но*) *">
 			<var name = "estatestatus" value = "0"/>
 			<var name = "fourthpitch" value = "Поняла."/>
 				<context id = "animalquestion"/>
@@ -92,12 +90,12 @@
 		</context>
 		<context id = "animalquestion">
 			<output value = "$fourthpitch Есть ли у вас домашние животные?"/>
-			<input value = "$Yes">
+			<input value = "(да|ага|угу) *">
 			<var name = "estatestatus" value = "1"/>
 			<var name = "fifthpitch" value = "Отлично."/>
 				<context id = "finalpitch"/>
 			</input>
-			<input value = "$No">
+			<input value = "(не*|но*) *">
 			<var name = "estatestatus" value = "0"/>
 			<var name = "fifthpitch" value = "Отлично."/>
 				<context id = "finalpitch"/>
