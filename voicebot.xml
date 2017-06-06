@@ -14,6 +14,7 @@
 									<context id = "next_time">
 										<input value = "$Text">
 											<var name = "callbacktime" pattern = "$Text"/>
+											<output value = "Спасибо! До свидания."/>
 										</input>
 									</context>
 							</input>
