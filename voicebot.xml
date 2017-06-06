@@ -1,8 +1,8 @@
 <context>
 	<input id = "startmessage" pattern = "start $Name::Text $Second_name::Text $Surname::Text">
-		<var name = "Name" value = "$Name"/>
-		<var name = "Surname" value = "$Surname"/>
-		<var name = "second_name" value = "$second_name"/>
+		<var name = "Name" value = "$Name" scope = "user"/>
+		<var name = "Surname" value = "$Surname" scope = "user"/>
+		<var name = "second_name" value = "$second_name" scope ="user"/>
 		<var name = "specialistname" value = "Юля"/>
 		<var name = "starttype" value= "Добрый день! Меня зовут $specialistname, я специалист сбербанка." scope="context"/>
 		<context id = "mainscenario">
