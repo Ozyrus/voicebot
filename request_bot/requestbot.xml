@@ -1,0 +1,5 @@
+<context>
+	<input pattern="/start">
+		<output value="sample"/>
+	</input>
+</context>
