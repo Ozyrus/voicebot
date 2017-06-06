@@ -1,5 +1,10 @@
 <context>
 	<input pattern="/start">
-		<output value="sample"/>
+		<context id="ready_to_call">	
+			<output value="Кому звоним?"/>
+			<input pattern="$Number $Name::Text $Surname::Text $Second_name::Text">
+				<output value="Имя: $Name, Отчество: $Second_name, Фамилия: $Surname"/>
+			</input>
+		<context/>
 	</input>
 </context>
