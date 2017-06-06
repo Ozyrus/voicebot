@@ -1,5 +1,8 @@
 <context>
-	<input id = "startmessage" pattern = "/start">
+	<input id = "startmessage" pattern = "start $Name $Surname $Second_name">
+		<var name = "Name" value = "$Name"/>
+		<var name = "Surname" value = "$Surname"/>
+		<var name = "second_name" value = "$second_name"/>
 		<var name = "specialistname" value = "Юля"/>
 		<var name = "starttype" value= "Добрый день! Меня зовут $specialistname, я специалист сбербанка." scope="context"/>
 		<context id = "mainscenario">
@@ -7,27 +10,27 @@
 				<input id = "greeting_next" pattern ="(да|ага)*">
 					<context id = "1question">
 					<var name = "comfytype" pattern = "Спасибо! Очень приятно познакомиться."/>
-						<output value = "$comfytype Вам удобно сейчас уделить мне пару минут?"/>
-							<context id = "comfy_or_not">
-								<input id = "not comfy" pattern = "(не*|неудобно) *">
-									<output value = "Извините. В какое удобное для вас время я могу перезвонить?"/>
-										<input value = "$Text">
-											<var name = "callbacktime" pattern = "$Text"/>
-											<output value = "Спасибо! До свидания."/>
-										</input>
-								</input>
-								<input id = "comfy" pattern = "(да|давайте|конечно|ладно|продолжай*)*">
-								<var name = "firstpitch" value = "Отлично! Сбербанк, совместно с Компанией «Сбербанк страхование жизни», разработал для Вас программу «Защита семьи».
-	Она дает возможность финансовой защиты в ситуациях, связанных с жизнью и здоровьем Вас и Вашей семьи.[Имя Отчество клиента], для того, чтобы подобрать наиболее подходящую программу и озвучить условия, разрешите задать вам несколько вопросов."/>
-									<context id = "marriagequestion">
-										<output value ="$firstpitch Вы состоите в официальном браке?"/>
-									</context>
-								</input>
-								<input id = "comfy_no_comrpende" pattern = "$Text">
-									<var name = "comfytype" value = "Не расслышала вас."/>
-									<context id = "comfy_or_not"/>
-								</input>
-							</context>
+						<context id = "comfy_or_not">
+							<output value = "$comfytype Вам удобно сейчас уделить мне пару минут?"/>
+									<input id = "not comfy" pattern = "(не*|неудобно) *">
+										<output value = "Извините. В какое удобное для вас время я могу перезвонить?"/>
+											<input value = "$Text">
+												<var name = "callbacktime" pattern = "$Text"/>
+												<output value = "Спасибо! До свидания."/>
+											</input>
+									</input>
+									<input id = "comfy" pattern = "(да|давайте|конечно|ладно|продолжай*)*">
+									<var name = "firstpitch" value = "Отлично! Сбербанк, совместно с Компанией «Сбербанк страхование жизни», разработал для Вас программу «Защита семьи».
+		Она дает возможность финансовой защиты в ситуациях, связанных с жизнью и здоровьем Вас и Вашей семьи.[Имя Отчество клиента], для того, чтобы подобрать наиболее подходящую программу и озвучить условия, разрешите задать вам несколько вопросов."/>
+										<context id = "marriagequestion">
+											<output value ="$firstpitch Вы состоите в официальном браке?"/>
+										</context>
+									</input>
+									<input id = "comfy_no_comrpende" pattern = "$Text">
+										<var name = "comfytype" value = "Не расслышала вас."/>
+										<context id = "comfy_or_not"/>
+									</input>
+						</context>
 					</context>
 				</input>
 				<input id = "greeting_return" pattern = "(не*|до свидания|неверн*) *">
