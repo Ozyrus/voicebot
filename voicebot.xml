@@ -1,5 +1,5 @@
 <context>
-	<input id = "startmessage" pattern = "start $Name $Surname $Second_name">
+	<input id = "startmessage" pattern = "start $Name::Text $Surname::Text $Second_name::Text">
 		<var name = "Name" value = "$Name"/>
 		<var name = "Surname" value = "$Surname"/>
 		<var name = "second_name" value = "$second_name"/>
