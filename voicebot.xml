@@ -7,7 +7,7 @@
 		<var name = "starttype" value= "Добрый день! Меня зовут $specialistname, я специалист сбербанка." scope="context"/>
 		<context id = "mainscenario">
 		<output value = "$starttype Вас зовут $Name $Second_name $Surname? Я попала по правильному номеру?"/>
-			<input id = "greeting_next" pattern ="(да|ага)*">
+			<input id = "greeting_next" pattern ="(да|ага) *">
 				<var name = "Сomfytype" pattern = "Спасибо! Очень приятно познакомиться."/>
 				<context id = "comfy_or_not">
 					<output value = "$Сomfytype Вам удобно сейчас уделить мне пару минут?"/>
