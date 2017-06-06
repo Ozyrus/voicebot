@@ -8,7 +8,7 @@
 		<context id = "mainscenario">
 		<output value = "$starttype Вас зовут $Name $Second_name $Surname? Я попала по правильному номеру?"/>
 			<input id = "greeting_next" pattern ="(да|ага) *">
-				<var name = "Сomfytype" pattern = "Спасибо! Очень приятно познакомиться."/>
+				<var name = "Сomfytype" value = "Спасибо! Очень приятно познакомиться."/>
 				<context id = "comfy_or_not">
 					<output value = "$Сomfytype Вам удобно сейчас уделить мне пару минут?"/>
 					<input id = "not comfy" pattern = "(не*|неудобно) *">
