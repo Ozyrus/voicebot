@@ -1,5 +1,5 @@
 <context>
-	<input id = "startmessage" pattern = "start $Name::Text $Second_name::Text $Surname::Text">
+	<input id = "startmessage" pattern = "start Surname: $Surname::Text Name: $Name::Text Second_name: $Second_name::Text">
 		<pattern name="Yes" value="(да|ага|угу) *"/>
 		<pattern name = "No" value = "(не*|но*) *"/>
 		<var name = "Name" value = "$Name" scope = "user"/>
@@ -71,6 +71,7 @@
 			<input value = "$Text">
 			<var name = "secondpitch" value = "Извините, не поняла."/>
 				<context id = "childrenquestion"/>
+			</input>
 		</context>
 		<context id = "estatequestion">
 			<output value = "$thirdpitch Есть ли у вас собственная недвижимость"/>
@@ -87,6 +88,7 @@
 			<input value = "$Text">
 			<var name = "thirdpitch" value = "Извините, не поняла."/>
 				<context id = "childrenquestion"/>
+			</input>
 		</context>
 		<context id = "animalquestion">
 			<output value = "$fourthpitch Есть ли у вас домашние животные?"/>
@@ -103,6 +105,7 @@
 			<input value = "$Text">
 			<var name = "fourthpitch" value = "Извините, не поняла."/>
 				<context id = "animalquestion"/>
+			</input>
 		</context>
 		<context id = "finalpitch">
 			<output value = "Благодарю Вас/спасибо за ответы.
