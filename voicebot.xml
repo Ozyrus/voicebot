@@ -34,7 +34,7 @@
 								<var name = "marriagestatus" value = "0"/>
 									<context id = "childrenquestion"/>
 								</input>
-								<input value = "$Text">
+								<input value = "$Text" modal = "True">
 								<var name = "firstpitch" value = "Извините, не расслышала."/>
 									<context id = "marriagequestion"/>
 								</input>
