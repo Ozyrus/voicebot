@@ -1,9 +1,9 @@
 <context>
 	<input pattern="/start">
 		<context id="ready_to_call">	
-			<output value="Êîìó çâîíèì?"/>
+			<output value="ÐšÐ¾Ð¼Ñƒ Ð·Ð²Ð¾Ð½Ð¸Ð¼?"/>
 			<input pattern="$Number $Name::Text $Surname::Text $Second_name::Text">
-				<output value="Èìÿ: $Name, Îò÷åñòâî: $Second_name, Ôàìèëèÿ: $Surname"/>
+				<output value="Ð˜Ð¼Ñ: $Name, ÐžÑ‚Ñ‡ÐµÑÑ‚Ð²Ð¾: $Second_name, Ð¤Ð°Ð¼Ð¸Ð»Ð¸Ñ: $Surname"/>
 			</input>
 		<context/>
 	</input>
