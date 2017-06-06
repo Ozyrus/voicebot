@@ -1,12 +1,15 @@
 <context>
-	<input id = "startmessage" pattern = "start">
+	<input id = "startmessage" pattern = "/start">
 		<var name = "starttype" value= "Добрый день, $Username! Меня зовут Оксана, я бот сбербанка." scope="context"/>
 		<context id = "mainscenario">
 			<output value = "$starttype У вас будет пять минут, чтобы поговорить со мной?"/>
-				<input id = "greeting_return" pattern ="(да|ага|есть|будет|давайте)*">
+				<input id = "greeting_next" pattern ="(да|ага|есть|будет|давайте)*">
 					<context id = "1question">
 					<output value = "Спасибо! Мне нужно будет задать вам пару вопросов."/>
 					</context>
+				<input id = "greeting_return" pattern = "(не*|до свидания) *">
+					<var name = "starttype" value ="Понимаете, это очень важно."/>
+					<context id = "mainscenario"/>
 				</input>
 		</context>
 	</input>
