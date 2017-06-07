@@ -41,7 +41,7 @@
 						</context>
 					</input>
 					<input id = "comfy_no_comrpende" pattern = "$Text">
-						<var name = "comfytype" value = "Не расслышала вас."/>
+						<var name = "Сomfytype" value = "Не расслышала вас."/>
 						<context id = "comfy_or_not"/>
 					</input>
 				</context>
