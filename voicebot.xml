@@ -91,12 +91,12 @@
 		<context id = "animalquestion">
 			<output value = '{"listen" : 1,  "text" : "$fourthpitch Есть ли у вас домашние животные?"}'/>
 			<input pattern = "* (да|ага|угу|есть|конечно|а то|верно|правильно|так|дальше) *">
-			<var name = "estatestatus" value = "1"/>
+			<var name = "animalstatus" value = "1"/>
 			<var name = "fifthpitch" value = "Отлично."/>
 				<context id = "finalpitch"/>
 			</input>
 			<input pattern = "* (не*|но*) *">
-			<var name = "estatestatus" value = "0"/>
+			<var name = "animalstatus" value = "0"/>
 			<var name = "fifthpitch" value = "Отлично."/>
 				<context id = "finalpitch"/>
 			</input>
