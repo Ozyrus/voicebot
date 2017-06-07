@@ -114,4 +114,7 @@
 Спасибо, что остаетесь нашим клиентом. С любовью к вам, Сбербанк."}'/>
 		</context>
 	</input>
+	<input id = 'testing' pattern = '$Text'>
+		<context id = "mainscenario"/>
+	</input>
 </context>
