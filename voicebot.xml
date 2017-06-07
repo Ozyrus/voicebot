@@ -85,7 +85,7 @@
 			</input>
 			<input pattern = "$Text">
 			<var name = "thirdpitch" value = "Извините, не поняла."/>
-				<context id = "childrenquestion"/>
+				<context id = "estatequestion"/>
 			</input>
 		</context>
 		<context id = "animalquestion">
