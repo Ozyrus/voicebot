@@ -1,4 +1,7 @@
 <context>
+<var name = "Name" value = "Иванов" scope = "user"/>
+<var name = "Surname" value = "Иван" scope = "user"/>
+<var name = "Second_name" value = "Иванович" scope ="user"/>
 	<input id = "startmessage" pattern = "start Surname $Surname::Text Name $Name::Text Second_name $Second_name::Text">
 		<var name = "Name" value = "$Name" scope = "user"/>
 		<var name = "Surname" value = "$Surname" scope = "user"/>
