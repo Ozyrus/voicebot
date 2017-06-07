@@ -7,11 +7,11 @@
 		<var name = "starttype" value= "Добрый день! Меня зовут $specialistname, я виртуальный ассистент сбербанка." scope="context"/>
 		<context id = "mainscenario">
 		<output value = '{"listen" : 1,  "text" : "$starttype Вас зовут $Name $Second_name $Surname? Я попала по правильному номеру?"}'/>
-			<input id = "greeting_next" pattern ="* (да|ага) *">
+			<input id = "greeting_next" pattern ="* (да|ага|а то|естественно) *">
 				<var name = "Сomfytype" value = "Спасибо! Очень приятно познакомиться."/>
 				<context id = "comfy_or_not">
 					<output value = '{"listen" : 1,  "text" : "$Сomfytype Вам удобно сейчас уделить мне пару минут?"}'/>
-					<input id = "not comfy" pattern = "* (не*|неудобно) *">
+					<input id = "not comfy" pattern = "* (не*|неудобно|потом) *">
 						<output value = '{"listen" : 1,  "text" : "Извините. В какое удобное для вас время я могу перезвонить?"}'/>
 							<context>
 							<input pattern = "$Text">
@@ -20,7 +20,7 @@
 							</input>
 							</context>
 					</input>
-					<input id = "comfy" pattern = "* (да|давайте|конечно|ладно|продолжай*)*">
+					<input id = "comfy" pattern = "* (да|давайте|конечно|ладно|продолжай*|удобно)*">
 					<var name = "firstpitch" value = "Отлично! Сбербанк, совместно с Компанией «Сбербанк страхование жизни», разработал для Вас программу «Защита семьи».
 Она дает возможность финансовой защиты в ситуациях, связанных с жизнью и здоровьем Вас и Вашей семьи. $Name $Second_name, для того, чтобы подобрать наиболее подходящую программу и озвучить условия, разрешите задать вам несколько вопросов."/>
 						<context id = "marriagequestion">
@@ -32,6 +32,7 @@
 								</input>
 								<input pattern = "* (не*|но*|развёлся|разве*|разво*) *">
 								<var name = "marriagestatus" value = "0"/>
+								<var name = "secondpitch" value = "Поняла."/>
 									<context id = "childrenquestion"/>
 								</input>
 								<input pattern = "$Text">
