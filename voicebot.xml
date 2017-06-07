@@ -6,31 +6,31 @@
 		<var name = "specialistname" value = "Юля"/>
 		<var name = "starttype" value= "Добрый день! Меня зовут $specialistname, я виртуальный ассистент сбербанка." scope="context"/>
 		<context id = "mainscenario">
-		<output value = "$starttype Вас зовут $Name $Second_name $Surname? Я попала по правильному номеру?"/>
-			<input id = "greeting_next" pattern ="(да|ага) *">
+		<output value = '{"listen" : 0,  "text" : "$starttype Вас зовут $Name $Second_name $Surname? Я попала по правильному номеру?"}'/>
+			<input id = "greeting_next" pattern ="* (да|ага) *">
 				<var name = "Сomfytype" value = "Спасибо! Очень приятно познакомиться."/>
 				<context id = "comfy_or_not">
-					<output value = "$Сomfytype Вам удобно сейчас уделить мне пару минут?"/>
-					<input id = "not comfy" pattern = "(не*|неудобно) *">
-						<output value = "Извините. В какое удобное для вас время я могу перезвонить?"/>
+					<output value = '{"listen" : 0,  "text" : "$Сomfytype Вам удобно сейчас уделить мне пару минут?"}'/>
+					<input id = "not comfy" pattern = "* (не*|неудобно) *">
+						<output value = '{"listen" : 0,  "text" : "Извините. В какое удобное для вас время я могу перезвонить?"}'/>
 							<context>
 							<input pattern = "$Text">
 								<var name = "callbacktime" pattern = "$Text"/>
-								<output value = "Спасибо! До свидания."/>
+								<output value = '{"listen" : 0,  "text" : "Спасибо! До свидания."}'/>
 							</input>
 							</context>
 					</input>
-					<input id = "comfy" pattern = "(да|давайте|конечно|ладно|продолжай*)*">
+					<input id = "comfy" pattern = "* (да|давайте|конечно|ладно|продолжай*)*">
 					<var name = "firstpitch" value = "Отлично! Сбербанк, совместно с Компанией «Сбербанк страхование жизни», разработал для Вас программу «Защита семьи».
-Она дает возможность финансовой защиты в ситуациях, связанных с жизнью и здоровьем Вас и Вашей семьи.$Name $Second_name, для того, чтобы подобрать наиболее подходящую программу и озвучить условия, разрешите задать вам несколько вопросов."/>
+Она дает возможность финансовой защиты в ситуациях, связанных с жизнью и здоровьем Вас и Вашей семьи. $Name $Second_name, для того, чтобы подобрать наиболее подходящую программу и озвучить условия, разрешите задать вам несколько вопросов."/>
 						<context id = "marriagequestion">
-							<output value ="$firstpitch Вы состоите в официальном браке?"/>
-								<input pattern = "(да|ага|угу) *">
+							<output value = '{"listen" : 0,  "text" : "$firstpitch Вы состоите в официальном браке?"}'/>
+								<input pattern = "* (да|ага|угу) *">
 								<var name = "marriagestatus" value = "1"/>
 								<var name = "secondpitch" value = "Хорошо."/>
 									<context id = "childrenquestion"/>
 								</input>
-								<input pattern = "(не*|но*) *">
+								<input pattern = "* (не*|но*) *">
 								<var name = "marriagestatus" value = "0"/>
 									<context id = "childrenquestion"/>
 								</input>
@@ -46,8 +46,8 @@
 					</input>
 				</context>
 			</input>
-			<input id = "greeting_return" pattern = "(не*|до свидания|неверн*) *">
-				<output value = "Извините! Видимо, произошла какая-то ошибка."/>
+			<input id = "greeting_return" pattern = "* (не*|до свидания|неверн*) *">
+				<output value = '{"listen" : 0,  "text" : "Извините! Видимо, произошла какая-то ошибка."}'/>
 			</input>
 			<input id = "greeting_no_comrpende" pattern = "$Text">
 				<var name = "starttype" value = "Не расслышала вас."/>
@@ -55,13 +55,13 @@
 			</input>
 		</context>
 		<context id = "childrenquestion">
-			<output value = "$secondpitch Есть ли у вас дети старше 2 лет?"/>
-			<input pattern = "(да|ага|угу) *">
+			<output value = '{"listen" : 0,  "text" : "$secondpitch Есть ли у вас дети старше 2 лет?"}'/>
+			<input pattern = "* (да|ага|угу) *">
 			<var name = "childrenstatus" value = "1"/>
 			<var name = "thirdpitch" value = "Спасибо."/>
 				<context id = "estatequestion"/>
 			</input>
-			<input pattern = "(не*|но*) *">
+			<input pattern = "* (не*|но*) *">
 			<var name = "childrenstatus" value = "0"/>
 			<var name = "thirdpitch" value = "Спасибо."/>
 				<context id = "estatequestion"/>
@@ -72,13 +72,13 @@
 			</input>
 		</context>
 		<context id = "estatequestion">
-			<output value = "$thirdpitch Есть ли у вас собственная недвижимость?"/>
-			<input pattern = "(да|ага|угу) *">
+			<output value = '{"listen" : 0,  "text" : "$thirdpitch Есть ли у вас собственная недвижимость?"}'/>
+			<input pattern = "* (да|ага|угу) *">
 			<var name = "estatestatus" value = "1"/>
 			<var name = "fourthpitch" value = "Поняла."/>
 				<context id = "animalquestion"/>
 			</input>
-			<input pattern = "(не*|но*) *">
+			<input pattern = "* (не*|но*) *">
 			<var name = "estatestatus" value = "0"/>
 			<var name = "fourthpitch" value = "Поняла."/>
 				<context id = "animalquestion"/>
@@ -89,13 +89,13 @@
 			</input>
 		</context>
 		<context id = "animalquestion">
-			<output value = "$fourthpitch Есть ли у вас домашние животные?"/>
-			<input pattern = "(да|ага|угу) *">
+			<output value = '{"listen" : 0,  "text" : "$fourthpitch Есть ли у вас домашние животные?"}'/>
+			<input pattern = "* (да|ага|угу) *">
 			<var name = "estatestatus" value = "1"/>
 			<var name = "fifthpitch" value = "Отлично."/>
 				<context id = "finalpitch"/>
 			</input>
-			<input pattern = "(не*|но*) *">
+			<input pattern = "* (не*|но*) *">
 			<var name = "estatestatus" value = "0"/>
 			<var name = "fifthpitch" value = "Отлично."/>
 				<context id = "finalpitch"/>
@@ -106,12 +106,12 @@
 			</input>
 		</context>
 		<context id = "finalpitch">
-			<output value = "Благодарю Вас/спасибо за ответы.
+			<output value = '{"listen" : 0,  "text" : "Благодарю Вас.
 
 Программa «Семья» - это защита от таких распространённых рисков как ожоги, переломы, травмы различной тяжести на общую сумму 800 000 рублей
 Я направляю вам СМС сообщение. Пройдя по ссылке внутри него вы узнаете все необходимые подробности и сможете преобрести данную программу.
 
-Спасибо, что остаетесь нашим клиентом. С любовью к вам, Сбербанк."/>
+Спасибо, что остаетесь нашим клиентом. С любовью к вам, Сбербанк."}'/>
 		</context>
 	</input>
 </context>
