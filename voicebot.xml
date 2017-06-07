@@ -72,7 +72,7 @@
 			</input>
 		</context>
 		<context id = "estatequestion">
-			<output value = "$thirdpitch Есть ли у вас собственная недвижимость"/>
+			<output value = "$thirdpitch Есть ли у вас собственная недвижимость?"/>
 			<input pattern = "(да|ага|угу) *">
 			<var name = "estatestatus" value = "1"/>
 			<var name = "fourthpitch" value = "Поняла."/>
