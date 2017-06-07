@@ -1,11 +1,10 @@
 <context>
 	<input id = "startmessage" pattern = "start Surname $Surname::Text Name $Name::Text Second_name $Second_name::Text">
-		<var name = "starttype" value= "Добрый день! Меня зовут $specialistname, я виртуальный ассистент сбербанка." scope="context"/>
+		<var name = "starttype" value= "Добрый день! Меня зовут Юля, я виртуальный ассистент сбербанка." scope="context"/>
 		<context id = "mainscenario">
-		<var name = "Name" value = "$Name" scope = "context"/>
-		<var name = "Surname" value = "$Surname" scope = "context"/>
-		<var name = "Second_name" value = "$Second_name" scope ="context"/>
-		<var name = "specialistname" value = "Юля"/>
+		<var name = "Name" value = "$Name"/>
+		<var name = "Surname" value = "$Surname"/>
+		<var name = "Second_name" value = "$Second_name"/>
 		<output value = '{"listen" : 1,  "text" : "$starttype Вас зовут $Name $Second_name $Surname? Я попала по правильному номеру?"}'/>
 			<input id = "greeting_next" pattern ="* (да|ага|а то|естественно) *">
 				<var name = "Сomfytype" value = "Спасибо! Очень приятно познакомиться."/>
